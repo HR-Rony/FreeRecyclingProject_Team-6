@@ -127,10 +127,8 @@ module.exports = {
 	},
 	
 	delete: function(req, res, next) {
-		console.log("now we delete item");
 		let id = req.body.id || req.params.id || req.query.id;
-		console.log("this is item id");
-		console.log(id);
+		console.log("item id===>"+id);
 		if(!id) {
 			return res.status(404).json({
 				success: 0,
