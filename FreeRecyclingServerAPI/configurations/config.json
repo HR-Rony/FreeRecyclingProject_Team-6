@@ -1,0 +1,8 @@
+{
+	"port": 8000,
+	"db": {
+		"path": "mongodb://localhost",
+		"name": "FreeRecyclingDB"
+	},
+	"secret": "freerecyclingdbsecret!@#$%"
+}
