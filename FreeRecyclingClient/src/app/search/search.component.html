@@ -1,0 +1,26 @@
+<div style="text-align:center;">
+<font size="5">Searching Items</font>
+</div>
+<table style="width:100%">
+	<tr>
+	<td align="right">
+		<label for="state"><font size="4">State</font></label>
+		<select id="state" name="state" [(ngModel)]="filter.state" 
+		(change)="populateCity(filter.state)">
+	        <option *ngFor="let item of states " [value]="item.state">{{item.state}}</option>
+	    </select>
+	</td>
+
+	<td align="left">
+	<label for="city"><font size="4">City</font></label>
+		<select id="city" name="city" [(ngModel)]="filter.city">
+		        <option *ngFor="let item of cities " [value]="item.city ">{{item.city}}</option>
+	    </select>
+		
+	</td>
+	<td align="left">
+		<button style="height:30px;width:70px" (click)="filterData()">Search</button>
+	</td>
+	</tr>
+</table>
+<br/>

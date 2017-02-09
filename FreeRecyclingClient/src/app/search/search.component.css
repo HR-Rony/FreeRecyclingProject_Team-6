@@ -1,0 +1,16 @@
+.inline {
+	display: inline-block;
+    float: left;
+    margin:3px;
+}
+.block {
+	display: flex;
+}
+
+.ion-ios-calendar-outline {
+	font-size: 49px !important;
+}
+
+.width-13 {
+	width: 14%;
+}

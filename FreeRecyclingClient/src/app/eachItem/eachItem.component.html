@@ -1,0 +1,33 @@
+<div style="text-align:center;">
+<font size="6">Contact Details </font>
+</div>
+<hr/>
+<div>
+ <a [routerLink]="['/items']">Display Item List</a>&nbsp;&nbsp;&nbsp;||&nbsp;&nbsp;&nbsp;
+ <a [routerLink]="['/items/add']">Add Item</a>
+</div>
+<div class="demo-card-wide mdl-card mdl-shadow--2dp cards_comp">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">{{itemsSrvc.currentItem.name}}</h2>
+  </div>
+    <div class="mdl-card__actions mdl-card--border">
+      <p>
+     Description:	{{itemsSrvc.currentItem.description}}
+    </p>
+  </div>
+  <div class="mdl-card__actions mdl-card--border">
+ <p>
+     Email:	{{itemsSrvc.currentItem.contact.email}}
+    </p>
+     <p>
+     Phone:	{{itemsSrvc.currentItem.contact.phone}}
+    </p>
+      <p>
+        State:	{{itemsSrvc.currentItem.state}}
+    </p>
+     <p>
+        City:	{{itemsSrvc.currentItem.city}}
+    </p>
+  </div>
+ <div class="mdl-card__actions mdl-card--border"></div>
+</div>

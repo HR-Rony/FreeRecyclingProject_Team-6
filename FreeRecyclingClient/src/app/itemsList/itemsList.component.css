@@ -1,0 +1,5 @@
+.cards_comp {
+    display: inline-block; 
+    margin:3px;
+    float: left;
+}

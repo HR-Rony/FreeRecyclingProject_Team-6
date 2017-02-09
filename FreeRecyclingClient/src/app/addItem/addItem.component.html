@@ -1,0 +1,83 @@
+<hr/>
+<div style="text-align:center;">
+<font size="6">Add Item</font>
+</div>
+<hr/>
+<div>
+&nbsp;&nbsp;&nbsp; <a [routerLink]="['/items']">Display Item List</a>&nbsp;&nbsp;&nbsp;
+ 
+</div>
+<hr/>
+<div class="mdl-grid">
+	<form [formGroup]="addItemForm" (ngSubmit)="submit()" class="mdl-cell mdl-cell--4-col mdl-cell--2-offset">
+		<table style="width:100%">
+			<tr>
+				<td style="font-weight:bold">
+				<label for="state " class="mdl-selectfield__label">State:</label>
+				</td>
+				<td>
+				<select id="state" name="state" [formControl]="addItemForm.controls['state']" (change)="populateCity(addItemForm.value.state)">
+					<option *ngFor="let item of states " [value]="item.state ">{{item.state}}</option>
+				</select>
+				</td>
+	    </tr>
+	    <tr>
+			<td  style="font-weight:bold">  <label for="city " >City:</label></td>
+			<td>
+		    <select id="city " name="city " [formControl]="addItemForm.controls[ 'city'] ">
+		        <option *ngFor="let item of cities " [value]="item.city ">{{item.city}}</option>
+		    </select>
+			<td>
+		</tr>
+		<tr>
+			<td style="font-weight:bold">Name:</td>
+			<td >
+				<input type="text" [formControl]="addItemForm.controls['name']" class="mdl-textfield__input" id="addItemFormName" name="name">
+			</td>
+			<td>
+				<font color="red">
+				<span class="error_happens" *ngIf="!addItemForm.controls['name'].valid && addItemForm.controls['name'].touched">Required</span>
+				</font>
+			</td>
+		</tr>		
+		<tr>
+			<td  style="font-weight:bold">Details:</td>
+			<td >
+				<input class="mdl-textfield__input" id="details" name="email" [formControl]="addItemForm.controls['details']">
+			</td>			
+		</tr>	
+		<tr>
+			<td  style="font-weight:bold">Description:</td>
+			<td >
+				<input class="mdl-textfield__input" id="description" name="email" [formControl]="addItemForm.controls['description']">
+			</td>			
+		</tr>	
+		<tr>
+			<td  style="font-weight:bold">
+				Email:
+			</td>
+			<td class="mdl-textfield mdl-js-textfield">
+				<input type="text" [formControl]="addItemForm.controls['contact'].controls['email']" class="mdl-textfield__input" id="addItemFormEmail"
+					name="email">
+			</td>
+			<td>
+				<font color="red">
+				<span class="error_happens" *ngIf="!addItemForm.controls['contact'].controls['email'].valid && addItemForm.controls['contact'].controls['email'].touched">Required</span>
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td style="font-weight:bold">
+				Mobile:
+			</td>
+			<td class="mdl-textfield mdl-js-textfield">
+				<input type="text" [formControl]="addItemForm.controls['contact'].controls['phone']" class="mdl-textfield__input" id="addItemFormPhone"
+					name="phone">
+			</td>
+		</tr>		
+		</table>
+		<br>
+		<br>
+		<button type="submit " [disabled]="!addItemForm.valid ">Submit</button>
+	</form>
+</div>
